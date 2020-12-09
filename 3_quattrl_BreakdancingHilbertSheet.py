@@ -19,7 +19,6 @@ https://stackoverflow.com/questions/41080000/convert-3d-coordinate-to-2d-coordin
 
 from colorsys import hsv_to_rgb
 from turtle import *
-import numpy as np
 import math
 
 

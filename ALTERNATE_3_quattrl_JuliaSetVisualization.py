@@ -138,11 +138,11 @@ def main():
 	# matrix = julia_set()
 	# matrix = julia_set(c=-1, ax=2)
 	# matrix = julia_set(c=complex(0, -0.8))
-	# matrix = julia_set(c=complex(-0.7269, 0.1889), num_iters=300)
+	matrix = julia_set(c=complex(-0.7269, 0.1889), num_iters=300)
 	# matrix = julia_set(c=complex(-0.79, 0.15), num_iters=300)
 	# matrix = julia_set(c=complex(-0.162, 1.04))
 	# matrix = julia_set(c=complex(0.28, 0.008))
-	matrix = julia_set(c=complex(-0.79, 0.15), num_iters=10)
+	# matrix = julia_set(c=complex(-0.79, 0.15), num_iters=10)
 
 	# colormap = "hot"
 	# colormap = "afmhot"
