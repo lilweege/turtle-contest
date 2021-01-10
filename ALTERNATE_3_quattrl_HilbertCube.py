@@ -39,7 +39,7 @@ from math import *
 
 
 # detail of curve
-order = 5
+order = 2
 
 # necessary constants
 WIDTH, HEIGHT = 512, 512
@@ -174,18 +174,18 @@ def main():
 	sequence = LSystem(axiom, ruleset)
 	
 	
-	# states = []
-	# for angle in range(360):
-		# path = list(traceCurve(sequence, interpret, beta=angle))
-		# lines = list(enumerate((path[i], path[i+1]) for i in range(t - 2)))
-		# lines.sort(key=lambda e: e[1][0].z, reverse=True)
-		# states.append(lines)
+	states = []
+	for angle in range(360):
+		path = list(traceCurve(sequence, interpret, beta=angle))
+		lines = list(enumerate((path[i], path[i+1]) for i in range(t - 2)))
+		lines.sort(key=lambda e: e[1][0].z, reverse=True)
+		states.append(lines)
 		
-		# print(round(angle/3.6, 2), "%")
+		print(round(angle/3.6, 2), "%")
 	
-	path = list(traceCurve(sequence, interpret))
-	lines = list(enumerate((path[i], path[i+1]) for i in range(t - 2)))
-	lines.sort(key=lambda e: e[1][0].z, reverse=True)
+	# path = list(traceCurve(sequence, interpret))
+	# lines = list(enumerate((path[i], path[i+1]) for i in range(t - 2)))
+	# lines.sort(key=lambda e: e[1][0].z, reverse=True)
 	
 	setup(WIDTH, HEIGHT)
 	title("Hilbert Cube")
@@ -195,23 +195,23 @@ def main():
 	tracer(False)
 	pensize(2)
 	
-	# while True:
-		# for lines in states:
-			# for i, (p1, p2) in lines:
-				# pencolor(hsv_to_rgb(i / t, 1, 1))
-				# pu()
-				# goto(p1.x, p1.y)
-				# pd()
-				# goto(p2.x, p2.y)
-			# update()
-			# clear()
+	while True:
+		for lines in states:
+			for i, (p1, p2) in lines:
+				pencolor(hsv_to_rgb(i / t, 1, 1))
+				pu()
+				goto(p1.x, p1.y)
+				pd()
+				goto(p2.x, p2.y)
+			update()
+			clear()
 
-	for i, (p1, p2) in lines:
-		pencolor(hsv_to_rgb(i / t, 1, 1))
-		pu()
-		goto(p1.x, p1.y)
-		pd()
-		goto(p2.x, p2.y)
+	# for i, (p1, p2) in lines:
+		# pencolor(hsv_to_rgb(i / t, 1, 1))
+		# pu()
+		# goto(p1.x, p1.y)
+		# pd()
+		# goto(p2.x, p2.y)
 	
 	print("DONE")
 	exitonclick()
